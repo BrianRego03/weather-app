@@ -52,13 +52,32 @@
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+#searchDivision{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#searchInput{
+    width: 20rem;
+    height: 3rem;
+    font-size: 2rem;
+    text-align: left;
+}
+#searchButton{
+    height: 3rem;
+    width: 3rem;
 }
 #contentSection{
     min-width: 100%;
     display: flex;
     flex-direction: column;
     
+}
+#cityDivision,#todayDivision{
+    font-size: 1.7rem;
+    font-weight: 500;
 }
 
 #mainTempDivision{
@@ -67,10 +86,10 @@
     justify-content: center;
     align-items: center;
     min-height: 100px;
-    /* width: 100%; */
-    margin-top:2rem;
+    margin-top:1rem;
     font-size: 3rem;
     background-color: rgba(255,255,255,0.2);
+    padding: 20px;
 }
 
 #iconDivision{
