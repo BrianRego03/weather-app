@@ -1,3 +1,48 @@
+class weatherInfo{
+    constructor(location,day,time,icon,temp,conditions,description,humidity,uvindex,moon,wind,
+        visibility,pressure,sunrise,sunset,day1day,day1icon,day1temp,day1conditions,
+        day2day,day2icon,day2temp,day2conditions,day3day,day3icon,day3temp,day3conditions
+    ){
+        this.location=location;
+        this.day=day;
+        this.time=time;
+
+        this.icon=icon;
+        this.temp=temp;
+        this.conditions=conditions;
+
+        this.description=description;
+
+        this.humidity=humidity;
+        this.uvindex=uvindex;
+        this.moon=moon;
+        this.wind=wind;
+        this.visibility=visibility;
+        this.pressure=pressure;
+        this.sunrise=sunrise;
+        this.sunset=sunset;
+
+        this.day1day=day1day;
+        this.day1icon=day1icon;
+        this.day1temp=day1temp;
+        this.day1conditions=day1conditions;
+
+        this.day2day=day2day;
+        this.day2icon=day2icon;
+        this.day2temp=day2temp;
+        this.day2conditions=day2conditions;
+
+        this.day3day=day3day;
+        this.day3icon=day3icon;
+        this.day3temp=day3temp;
+        this.day3conditions=day3conditions;
+
+
+    }
+
+
+}
+
 
 
 async function getWeather(){
