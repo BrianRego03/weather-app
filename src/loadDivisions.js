@@ -80,7 +80,7 @@ const displayPage=(obj)=>{
     
     let UVNumber=document.createElement("div");
     UVNumber.setAttribute("class","secondTempNumber");
-    
+    UVNumber.setAttribute("id","uvNum");
     UVNumber.innerText="9";
     let UVclass=UVbase(9);
     UVNumber.classList.add(UVclass);
