@@ -60,7 +60,9 @@
     justify-content: center;
 }
 #searchInput{
-    width: 20rem;
+    min-width: 10rem;
+    max-width: 20rem;
+    
     height: 3rem;
     font-size: 2rem;
     text-align: left;
