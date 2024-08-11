@@ -9,16 +9,21 @@
     font-weight: 700;
     margin-bottom: 3rem;
 }
+#contentSection{
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
 #mainTempDivision{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    min-height: 100px;
     /* width: 100%; */
     margin-top:2rem;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 #iconDivision{
@@ -30,4 +35,42 @@
 }
 #conditionDivision{
     /* width: 60%; */
+}
+
+
+
+#secondTempDivision{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.secondTempChildren{
+    width: 250px;
+    font-size: 1.5rem;
+    border: 1px solid black;
+}
+
+.secondTempTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.secondTempSVG{
+    width: 42px;
+}
+
+.secondTempNumber{
+    font-size: 2.5rem;
+}
+
+#moonStyle{
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    margin-left: 40%;
+    margin-right: 40%;
+    
+
 }
