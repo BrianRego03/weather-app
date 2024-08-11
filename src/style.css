@@ -67,6 +67,18 @@
     font-size: 2.5rem;
 }
 
+.UVred{
+    border-bottom: 10px solid red;
+}
+.UVyellow{
+    border-bottom: 10px solid yellow;
+
+}
+.UVgreen{
+    border-bottom: 10px solid rgb(164, 255, 29);
+
+}
+
 #moonStyle{
     display: flex;
     justify-content: center;
