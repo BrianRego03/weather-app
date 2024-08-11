@@ -1,6 +1,7 @@
 import { UVbase } from "./UVindexer";
 import { moonphase,moonSVGgenerate } from "./moonphaser";
 import { iconGenerate } from "./weatherIcon";
+import { backgroundGenerate } from "./backgroundpicker";
 
 
 const displayPage=(obj)=>{
@@ -292,6 +293,11 @@ const displayPage=(obj)=>{
     day3Condition.setAttribute("class","secondTempTitle");
     day3Condition.innerText="Sunny with a chance of rainbows";
     day3Div.appendChild(day3Condition);
+
+
+
+    let bodySection=document.querySelector("body");
+    bodySection.setAttribute("class",backgroundGenerate(20));
 
 
 
