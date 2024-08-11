@@ -33,9 +33,6 @@
 #tempDivision{
     margin-right: 1.5rem;
 }
-#conditionDivision{
-    /* width: 60%; */
-}
 
 
 
@@ -82,7 +79,7 @@
 #moonStyle{
     display: flex;
     justify-content: center;
-    width: 60px;
+    width: 80px;
     margin-left: 40%;
     margin-right: 40%;
     

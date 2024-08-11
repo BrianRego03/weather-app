@@ -1,4 +1,5 @@
 import { UVbase } from "./UVindexer";
+import { moonphase,moonSVGgenerate } from "./moonphaser";
 
 
 const displayPage=(obj)=>{
@@ -95,8 +96,8 @@ const displayPage=(obj)=>{
     moonTitleSection.setAttribute("class","secondTempTitle");    
     let moonSymbol=document.createElement("div");
     moonSymbol.setAttribute("id","moonStyle");
-    moonTitleSection.innerText="Waning crescent";
-    moonSymbol.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>moon-waning-crescent</title><path d="M2 12A10 10 0 0 0 15 21.54A10 10 0 0 1 15 2.46A10 10 0 0 0 2 12Z" /></svg>`;
+    moonTitleSection.innerText=moonphase(0.5);
+    moonSymbol.innerHTML=moonSVGgenerate(0.5);
     moonDiv.appendChild(moonSymbol);
     moonDiv.appendChild(moonTitleSection);
 
