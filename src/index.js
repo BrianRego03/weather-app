@@ -1,3 +1,6 @@
+import './style.css';
+import { displayPage } from './loadDivisions';
+
 class weatherInfo{
     constructor(location,day,time,icon,temp,conditions,description,humidity,uvindex,moon,wind,
         visibility,pressure,sunrise,sunset,day1day,day1icon,day1temp,day1conditions,
@@ -49,47 +52,51 @@ const dayData= new weatherInfo();
 async function getWeather(){
     // const response= await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/mangalore%20ka?unitGroup=metric&key=7QBLZ6KGED9PMRDZ8D5T267RD&contentType=json",{mode:"cors"})
 
-    const weatherData=await response.json();
-    console.log(dayData);
+    // const weatherData=await response.json();
+    // console.log(dayData);
 
-    console.log(weatherData);
-    dayData.location=weatherData.resolvedAddress;
-    dayData.time=weatherData.currentConditions.datetime;
-    dayData.day=weatherData.days[0].datetime; 
+    // console.log(weatherData);
+    // dayData.location=weatherData.resolvedAddress;
+    // dayData.time=weatherData.currentConditions.datetime;
+    // dayData.day=weatherData.days[0].datetime; 
 
-    dayData.icon=weatherData.currentConditions.icon;
-    dayData.temp=weatherData.currentConditions.temp;
-    dayData.conditions=weatherData.currentConditions.conditions;
+    // dayData.icon=weatherData.currentConditions.icon;
+    // dayData.temp=weatherData.currentConditions.temp;
+    // dayData.conditions=weatherData.currentConditions.conditions;
     
-    dayData.description=weatherData.description;
+    // dayData.description=weatherData.description;
 
-    dayData.humidity=weatherData.currentConditions.humidity;
-    dayData.uvindex=weatherData.currentConditions.uvindex;
-    dayData.moon=weatherData.currentConditions.moonphase;
-    dayData.wind=weatherData.currentConditions.windspeed;
-    dayData.visibility=weatherData.currentConditions.visibility;
-    dayData.pressure=weatherData.currentConditions.pressure;
-    dayData.sunrise=weatherData.currentConditions.sunrise;
-    dayData.sunset=weatherData.currentConditions.sunset;
+    // dayData.humidity=weatherData.currentConditions.humidity;
+    // dayData.uvindex=weatherData.currentConditions.uvindex;
+    // dayData.moon=weatherData.currentConditions.moonphase;
+    // dayData.wind=weatherData.currentConditions.windspeed;
+    // dayData.visibility=weatherData.currentConditions.visibility;
+    // dayData.pressure=weatherData.currentConditions.pressure;
+    // dayData.sunrise=weatherData.currentConditions.sunrise;
+    // dayData.sunset=weatherData.currentConditions.sunset;
 
     
-    dayData.day1day=weatherData.days[1].datetime;    
-    dayData.day1icon=weatherData.days[1].icon;
-    dayData.day1temp=weatherData.days[1].temp;
-    dayData.day1conditions=weatherData.days[1].conditions;
+    // dayData.day1day=weatherData.days[1].datetime;    
+    // dayData.day1icon=weatherData.days[1].icon;
+    // dayData.day1temp=weatherData.days[1].temp;
+    // dayData.day1conditions=weatherData.days[1].conditions;
 
-    dayData.day2day=weatherData.days[2].datetime;    
-    dayData.day2icon=weatherData.days[2].icon;
-    dayData.day2temp=weatherData.days[2].temp;
-    dayData.day2conditions=weatherData.days[2].conditions;
+    // dayData.day2day=weatherData.days[2].datetime;    
+    // dayData.day2icon=weatherData.days[2].icon;
+    // dayData.day2temp=weatherData.days[2].temp;
+    // dayData.day2conditions=weatherData.days[2].conditions;
 
-    dayData.day3day=weatherData.days[3].datetime;    
-    dayData.day3icon=weatherData.days[3].icon;
-    dayData.day3temp=weatherData.days[3].temp;
-    dayData.day3conditions=weatherData.days[3].conditions;
+    // dayData.day3day=weatherData.days[3].datetime;    
+    // dayData.day3icon=weatherData.days[3].icon;
+    // dayData.day3temp=weatherData.days[3].temp;
+    // dayData.day3conditions=weatherData.days[3].conditions;
+    displayPage(dayData);
+    
 
 
 }
 
 getWeather();
-console.log(dayData);
+// console.log(dayData);
+
+

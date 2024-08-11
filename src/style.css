@@ -1,0 +1,33 @@
+*{
+    text-align: center;
+}
+
+#titleDivision{
+    color: blue;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+#mainTempDivision{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    /* width: 100%; */
+    margin-top:2rem;
+    font-size: 2rem;
+}
+
+#iconDivision{
+    width: 100px;
+    margin-right: 1.5rem;
+}
+#tempDivision{
+    margin-right: 1.5rem;
+}
+#conditionDivision{
+    /* width: 60%; */
+}
