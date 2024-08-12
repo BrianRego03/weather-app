@@ -57,7 +57,7 @@ async function getWeather(value){
     loadingScreen();
     const response= await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+ value +"?unitGroup=metric&key=7QBLZ6KGED9PMRDZ8D5T267RD&contentType=json",{mode:"cors"})
 
-    const weatherData=await response.json();
+    const weatherData=await (response.json()).catch(errorHandler());;
     console.log(dayData);
 
     console.log(weatherData);
@@ -102,6 +102,14 @@ async function getWeather(value){
     
 
 
+}
+
+function errorHandler(){
+    const catchDiv=document.createElement("div");
+    catchDiv.setAttribute("id","loadingDivision");
+    catchDiv.innerText="Invalid location"
+    contentSection.appendChild(catchDiv);
+    
 }
 
 const tempSwitchActivate=()=>{
