@@ -306,7 +306,8 @@ const displayPage=(obj)=>{
 
 
     let bodySection=document.querySelector("body");
-    bodySection.setAttribute("class",backgroundGenerate(16));
+    let currentTime=(obj.time).slice(0,2);
+    bodySection.setAttribute("class",backgroundGenerate(+currentTime));
 
 
 
