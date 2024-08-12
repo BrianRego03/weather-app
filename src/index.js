@@ -1,5 +1,6 @@
 import './style.css';
 import { displayPage } from './loadDivisions';
+import { contentClear,loadingScreen } from './clearContent';
 
 class weatherInfo{
     constructor(location,day,time,icon,temp,conditions,description,humidity,uvindex,moon,wind,
@@ -50,6 +51,8 @@ const dayData= new weatherInfo();
 
 
 async function getWeather(value){
+    contentClear();
+    loadingScreen();
     const response= await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+ value +"?unitGroup=metric&key=7QBLZ6KGED9PMRDZ8D5T267RD&contentType=json",{mode:"cors"})
 
     const weatherData=await response.json();
@@ -90,6 +93,7 @@ async function getWeather(value){
     dayData.day3icon=weatherData.days[3].icon;
     dayData.day3temp=weatherData.days[3].temp;
     dayData.day3conditions=weatherData.days[3].conditions;
+    contentClear();
     displayPage(dayData);
     
 
