@@ -13,12 +13,12 @@ const displayPage=(obj)=>{
     
 
     let cityDiv=document.createElement("div");
-    cityDiv.innerText="mangalore"
+    cityDiv.innerText=obj.location;
     cityDiv.setAttribute("id","cityDivision");
     contentSection.appendChild(cityDiv);
 
     let todayDiv=document.createElement("div");
-    todayDiv.innerText="11th August,2024";
+    todayDiv.innerText=(obj.day);
     todayDiv.setAttribute("id","todayDivision");
     contentSection.appendChild(todayDiv);
 
@@ -28,17 +28,17 @@ const displayPage=(obj)=>{
 
     let iconDiv=document.createElement("div");
     iconDiv.setAttribute("id","iconDivision");
-    iconDiv.appendChild(iconGenerate("fog"));
+    iconDiv.appendChild(iconGenerate(obj.icon));
     mainTempDiv.appendChild(iconDiv);
 
     let tempDiv=document.createElement("div");
     tempDiv.setAttribute("id","tempDivision");
-    tempDiv.innerText="39.5"+String.fromCharCode(176)+"C";
+    tempDiv.innerText=`${obj.temp}`+`${String.fromCharCode(176)}`+`C`;
     mainTempDiv.appendChild(tempDiv);
 
     let conditionDiv=document.createElement("div");
     conditionDiv.setAttribute("id","conditionDivision");
-    conditionDiv.innerText="Sunny,partly cloudy";
+    conditionDiv.innerText=obj.conditions;
     mainTempDiv.appendChild(conditionDiv);
 
     let secondTempDiv=document.createElement("div");
@@ -61,7 +61,7 @@ const displayPage=(obj)=>{
 
     let humidNumber=document.createElement("div");
     humidNumber.setAttribute("class","secondTempNumber");
-    humidNumber.innerText="9%";
+    humidNumber.innerText=`${obj.humidity}%`;
     humidDiv.appendChild(humidTitleSection);
     humidDiv.appendChild(humidNumber);
 
@@ -84,8 +84,8 @@ const displayPage=(obj)=>{
     let UVNumber=document.createElement("div");
     UVNumber.setAttribute("class","secondTempNumber");
     UVNumber.setAttribute("id","uvNum");
-    UVNumber.innerText="9";
-    let UVclass=UVbase(9);
+    UVNumber.innerText=obj.uvindex;
+    let UVclass=UVbase(+(obj.uvindex));
     UVNumber.classList.add(UVclass);
     UVDiv.appendChild(UVTitleSection);
     UVDiv.appendChild(UVNumber);
@@ -100,8 +100,8 @@ const displayPage=(obj)=>{
     moonTitleSection.setAttribute("class","secondTempTitle");    
     let moonSymbol=document.createElement("div");
     moonSymbol.setAttribute("id","moonStyle");
-    moonTitleSection.innerText=moonphase(0.5);
-    moonSymbol.innerHTML=moonSVGgenerate(0.5);
+    moonTitleSection.innerText=moonphase(obj.moon);
+    moonSymbol.innerHTML=moonSVGgenerate(obj.moon);
     moonDiv.appendChild(moonSymbol);
     moonDiv.appendChild(moonTitleSection);
 
@@ -123,7 +123,7 @@ const displayPage=(obj)=>{
     
     let windNumber=document.createElement("div");
     windNumber.setAttribute("class","secondTempNumber");
-    windNumber.innerText="13kph";
+    windNumber.innerText=`${obj.wind}kph`;
     windDiv.appendChild(windTitleSection);
     windDiv.appendChild(windNumber);
 
@@ -147,7 +147,7 @@ const displayPage=(obj)=>{
     
     let visibleNumber=document.createElement("div");
     visibleNumber.setAttribute("class","secondTempNumber");
-    visibleNumber.innerText="13km";
+    visibleNumber.innerText=`${obj.visibility}km`;
     visibleDiv.appendChild(visibleTitleSection);
     visibleDiv.appendChild(visibleNumber);
 
@@ -171,7 +171,7 @@ const displayPage=(obj)=>{
     
     let pressureNumber=document.createElement("div");
     pressureNumber.setAttribute("class","secondTempNumber");
-    pressureNumber.innerText="1073mb";
+    pressureNumber.innerText=`${obj.pressure}mb`;
     pressureDiv.appendChild(pressureTitleSection);
     pressureDiv.appendChild(pressureNumber);
 
@@ -193,7 +193,7 @@ const displayPage=(obj)=>{
     
     let sunriseNumber=document.createElement("div");
     sunriseNumber.setAttribute("class","secondTempNumber");
-    sunriseNumber.innerText="06:00:00";
+    sunriseNumber.innerText=obj.sunrise;
     sunriseDiv.appendChild(sunriseTitleSection);
     sunriseDiv.appendChild(sunriseNumber);
 
@@ -215,7 +215,7 @@ const displayPage=(obj)=>{
     
     let sunSetNumber=document.createElement("div");
     sunSetNumber.setAttribute("class","secondTempNumber");
-    sunSetNumber.innerText="18:10:00";
+    sunSetNumber.innerText=obj.sunset;
     sunSetDiv.appendChild(sunSetTitleSection);
     sunSetDiv.appendChild(sunSetNumber);
 
@@ -232,22 +232,22 @@ const displayPage=(obj)=>{
     finalTempDiv.appendChild(day1Div);
     let day1Day=document.createElement("div");
     day1Day.setAttribute("class","secondTempTitle");
-    day1Day.innerText="August 12";
+    day1Day.innerText=obj.day1day;
     day1Div.appendChild(day1Day);
 
     let day1Icon=document.createElement("div");
     day1Icon.setAttribute("class","finalSVG");
-    day1Icon.appendChild(iconGenerate("hail"));
+    day1Icon.appendChild(iconGenerate(obj.day1icon));
     day1Div.appendChild(day1Icon);
 
     let day1Temp=document.createElement("div");
     day1Temp.setAttribute("class","secondTempTitle");
-    day1Temp.innerText="39.5"+String.fromCharCode(176)+"C";
+    day1Temp.innerText=`${obj.day1temp}`+`${String.fromCharCode(176)}`+`C`;
     day1Div.appendChild(day1Temp);
 
     let day1Condition=document.createElement("div");
     day1Condition.setAttribute("class","secondTempTitle");
-    day1Condition.innerText="Sunny with a chance of rainbows";
+    day1Condition.innerText=obj.day1conditions;
     day1Div.appendChild(day1Condition);
 
     let day2Div=document.createElement("div");
@@ -255,22 +255,22 @@ const displayPage=(obj)=>{
     finalTempDiv.appendChild(day2Div);
     let day2Day=document.createElement("div");
     day2Day.setAttribute("class","secondTempTitle");
-    day2Day.innerText="August 13";
+    day2Day.innerText=obj.day2day;
     day2Div.appendChild(day2Day);
 
     let day2Icon=document.createElement("div");
     day2Icon.setAttribute("class","finalSVG");
-    day2Icon.appendChild(iconGenerate("partly-cloudy-day"));
+    day2Icon.appendChild(iconGenerate(obj.day2icon));
     day2Div.appendChild(day2Icon);
 
     let day2Temp=document.createElement("div");
     day2Temp.setAttribute("class","secondTempTitle");
-    day2Temp.innerText="39.5"+String.fromCharCode(176)+"C";
+    day2Temp.innerText=`${obj.day2temp}`+`${String.fromCharCode(176)}`+`C`;
     day2Div.appendChild(day2Temp);
 
     let day2Condition=document.createElement("div");
     day2Condition.setAttribute("class","secondTempTitle");
-    day2Condition.innerText="Sunny with a chance of rainbows";
+    day2Condition.innerText=obj.day2conditions;
     day2Div.appendChild(day2Condition);
 
     let day3Div=document.createElement("div");
@@ -278,22 +278,22 @@ const displayPage=(obj)=>{
     finalTempDiv.appendChild(day3Div);
     let day3Day=document.createElement("div");
     day3Day.setAttribute("class","secondTempTitle");
-    day3Day.innerText="August 14";
+    day3Day.innerText=obj.day3day;
     day3Div.appendChild(day3Day);
 
     let day3Icon=document.createElement("div");
     day3Icon.setAttribute("class","finalSVG");
-    day3Icon.appendChild(iconGenerate("snow-showers-night"));
+    day3Icon.appendChild(iconGenerate(obj.day3icon));
     day3Div.appendChild(day3Icon);
 
     let day3Temp=document.createElement("div");
     day3Temp.setAttribute("class","secondTempTitle");
-    day3Temp.innerText="39.5"+String.fromCharCode(176)+"C";
+    day3Temp.innerText=`${obj.day3temp}`+`${String.fromCharCode(176)}`+`C`;
     day3Div.appendChild(day3Temp);
 
     let day3Condition=document.createElement("div");
     day3Condition.setAttribute("class","secondTempTitle");
-    day3Condition.innerText="Sunny with a chance of rainbows";
+    day3Condition.innerText=obj.day3conditions;
     day3Div.appendChild(day3Condition);
 
 
