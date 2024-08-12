@@ -1,6 +1,7 @@
 import './style.css';
 import { displayPage } from './loadDivisions';
 import { contentClear,loadingScreen } from './clearContent';
+import { addTempUnitSwitch, celsiusGenerate, fahrenheitGenerate } from './tempUnitSwitcher';
 
 class weatherInfo{
     constructor(location,day,time,icon,temp,conditions,description,humidity,uvindex,moon,wind,
@@ -48,6 +49,7 @@ class weatherInfo{
 }
 
 const dayData= new weatherInfo();
+let unitSwitch="C";
 
 
 async function getWeather(value){
@@ -94,14 +96,68 @@ async function getWeather(value){
     dayData.day3temp=weatherData.days[3].temp;
     dayData.day3conditions=weatherData.days[3].conditions;
     contentClear();
-    displayPage(dayData);
+    displayPage(dayData,unitSwitch);
+    addTempUnitSwitch();
+    tempSwitchActivate();
     
 
 
 }
 
+const tempSwitchActivate=()=>{
+    const celSwitch=document.getElementById("celsius");
+    const fahrSwitch=document.getElementById("fahrenheit");
+    if(unitSwitch==="C"){
+        celSwitch.setAttribute("class","selected");
+        fahrSwitch.setAttribute("class","greyed");
+
+    }
+    else {
+        celSwitch.setAttribute("class","greyed");
+        fahrSwitch.setAttribute("class","selected");
+    }
+
+    celSwitch.addEventListener("click",()=>{
+        celSwitch.setAttribute("class","selected");
+        fahrSwitch.setAttribute("class","greyed");
+        if(unitSwitch==="C"){
+            return;
+        }
+        unitSwitch="C";
+        dayData.temp=celsiusGenerate(dayData.temp);
+        dayData.day1temp=celsiusGenerate(dayData.day1temp);
+        dayData.day2temp=celsiusGenerate(dayData.day2temp);
+        dayData.day3temp=celsiusGenerate(dayData.day3temp);
+        contentClear();
+        displayPage(dayData,unitSwitch);
+        addTempUnitSwitch();
+        tempSwitchActivate();
+    })
+
+    fahrSwitch.addEventListener("click",()=>{
+        celSwitch.setAttribute("class","greyed");
+        fahrSwitch.setAttribute("class","selected");
+        if(unitSwitch==="F"){
+            return;
+        }
+        unitSwitch="F";
+        dayData.temp=fahrenheitGenerate(dayData.temp);
+        dayData.day1temp=fahrenheitGenerate(dayData.day1temp);
+        dayData.day2temp=fahrenheitGenerate(dayData.day2temp);
+        dayData.day3temp=fahrenheitGenerate(dayData.day3temp);
+        contentClear();
+        displayPage(dayData,unitSwitch);
+        addTempUnitSwitch();
+        tempSwitchActivate();
+    })
+
+}
+
+
+
 // getWeather();
 // console.log(dayData);
+
 
 const searchBtn=document.getElementById("searchButton");
 const searchInput=document.getElementById("searchInput");
