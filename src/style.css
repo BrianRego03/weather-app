@@ -98,6 +98,9 @@
     width: 100px;
     margin-right: 1.5rem;
 }
+#iconDivision>img{
+    width: 90px;
+}
 #tempDivision{
     margin-right: 1.5rem;
 }
@@ -173,6 +176,7 @@
     border-radius: 1rem;
     margin: 1rem;
     background-color:rgba(0,0,0,0.5);
+    padding:5px;
 }
 .finalSVG{
     margin-left: 36%;

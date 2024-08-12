@@ -18,7 +18,9 @@ const displayPage=(obj)=>{
     contentSection.appendChild(cityDiv);
 
     let todayDiv=document.createElement("div");
-    todayDiv.innerText=(obj.day);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+    todayDiv.innerText=(new Date(obj.day).toLocaleDateString("en-US", options));
     todayDiv.setAttribute("id","todayDivision");
     contentSection.appendChild(todayDiv);
 
@@ -237,7 +239,7 @@ const displayPage=(obj)=>{
     finalTempDiv.appendChild(day1Div);
     let day1Day=document.createElement("div");
     day1Day.setAttribute("class","secondTempTitle");
-    day1Day.innerText=obj.day1day;
+    day1Day.innerText=(new Date(obj.day1day).toLocaleDateString("en-US", options));
     day1Div.appendChild(day1Day);
 
     let day1Icon=document.createElement("div");
@@ -260,7 +262,7 @@ const displayPage=(obj)=>{
     finalTempDiv.appendChild(day2Div);
     let day2Day=document.createElement("div");
     day2Day.setAttribute("class","secondTempTitle");
-    day2Day.innerText=obj.day2day;
+    day2Day.innerText=(new Date(obj.day2day).toLocaleDateString("en-US", options));
     day2Div.appendChild(day2Day);
 
     let day2Icon=document.createElement("div");
@@ -283,7 +285,7 @@ const displayPage=(obj)=>{
     finalTempDiv.appendChild(day3Div);
     let day3Day=document.createElement("div");
     day3Day.setAttribute("class","secondTempTitle");
-    day3Day.innerText=obj.day3day;
+    day3Day.innerText=(new Date(obj.day3day).toLocaleDateString("en-US", options));
     day3Div.appendChild(day3Day);
 
     let day3Icon=document.createElement("div");
