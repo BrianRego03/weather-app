@@ -219,6 +219,11 @@ const displayPage=(obj)=>{
     sunSetDiv.appendChild(sunSetTitleSection);
     sunSetDiv.appendChild(sunSetNumber);
 
+    let descriptionDiv=document.createElement("div");
+    descriptionDiv.setAttribute("id","descriptionDivision");
+    descriptionDiv.innerText=obj.description;
+    contentSection.appendChild(descriptionDiv);
+
 
 
 
