@@ -153,12 +153,6 @@ const tempSwitchActivate=()=>{
 
 }
 
-
-
-// getWeather();
-// console.log(dayData);
-
-
 const searchBtn=document.getElementById("searchButton");
 const searchInput=document.getElementById("searchInput");
 
@@ -167,3 +161,4 @@ searchBtn.addEventListener("click",()=>{
 
 })
 
+getWeather("Mangalore KA");

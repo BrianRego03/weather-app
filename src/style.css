@@ -61,6 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 }
 #searchInput{
     min-width: 10rem;
@@ -129,7 +130,7 @@
 }
 #tempDivision{
     margin-right: 1.5rem;
-    width: 150px;
+    width: 200px;
 }
 
 
@@ -195,6 +196,7 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 .finalTempChildren{
     width: 250px;
@@ -204,6 +206,7 @@
     margin: 1rem;
     background-color:rgba(0,0,0,0.5);
     padding:5px;
+    
 }
 .finalSVG{
     margin-left: 36%;
