@@ -57,7 +57,7 @@ async function getWeather(value){
     loadingScreen();
     const response= await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+ value +"?unitGroup=metric&key=7QBLZ6KGED9PMRDZ8D5T267RD&contentType=json",{mode:"cors"})
 
-    const weatherData=await (response.json()).catch(errorHandler());;
+    const weatherData=await response.json();
     console.log(dayData);
 
     console.log(weatherData);
@@ -95,6 +95,7 @@ async function getWeather(value){
     dayData.day3icon=weatherData.days[3].icon;
     dayData.day3temp=weatherData.days[3].temp;
     dayData.day3conditions=weatherData.days[3].conditions;
+    fahrenheitUpdate();
     contentClear();
     displayPage(dayData,unitSwitch);
     addTempUnitSwitch();
@@ -160,12 +161,20 @@ const tempSwitchActivate=()=>{
     })
 
 }
+const fahrenheitUpdate=()=>{
+    if(unitSwitch==="F"){
+        dayData.temp=fahrenheitGenerate(dayData.temp);
+        dayData.day1temp=fahrenheitGenerate(dayData.day1temp);
+        dayData.day2temp=fahrenheitGenerate(dayData.day2temp);
+        dayData.day3temp=fahrenheitGenerate(dayData.day3temp);
 
+    }
+}
 const searchBtn=document.getElementById("searchButton");
 const searchInput=document.getElementById("searchInput");
 
 searchBtn.addEventListener("click",()=>{
-    getWeather(searchInput.value);
+    getWeather(searchInput.value).catch(alert);;
 
 })
 
